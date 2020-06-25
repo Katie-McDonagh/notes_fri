@@ -1,6 +1,10 @@
 (function (exports) {
+
+  var idcounter = 0;
+
   function Note(text) {
     this._text = text;
+    this.id = idcounter++;
   }
 
   Note.prototype.receivesText = function () {
