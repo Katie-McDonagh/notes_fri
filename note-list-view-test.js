@@ -14,5 +14,15 @@ function noNoteHtmlWrap() {
   assert.isTrue(noteListView.htmlWrap() === '<ul></ul>')
 }
 
+function onlyFirst20Chars() {
+var list = new NoteList();
+list.addNote("I'm a note that is over twenty characters long")
+var noteListView = new NoteListView(list);
+var shortenedNoteWrap = "<ul><li><div>I'm a note that is o</div></li></ul>"
+assert.isTrue(noteListView.htmlWrap() === shortenedNoteWrap)
+
+}
+
 htmlWrap();
-noNoteHtmlWrap()
+noNoteHtmlWrap();
+onlyFirst20Chars();
